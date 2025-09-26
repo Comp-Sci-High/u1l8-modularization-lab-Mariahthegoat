@@ -5,7 +5,7 @@
 let groceryList = ["Milk", "Oreos"];
 
 // Part 1 - Modularizing
-// In this section, you will use the existing code and turn them into functions.
+// In this section, you will use the existing code and turn them into functions. 
 // Make sure to leave the console logs as part of the function.
 // What each function returns will be specified.
 // Test your functions as you go.
@@ -14,6 +14,11 @@ let groceryList = ["Milk", "Oreos"];
 //////////////////////////////////////////////////////////////////////
 // 1. Create a function that adds an item to the list.
 // Return the new item.
+function additem(item){
+  groceryList.push(item);
+  console.log("item added:" +item);
+  return item;
+}
 
 // Code to modularize:
 let item = "Animal Crackers";
@@ -23,11 +28,10 @@ console.log("Item added: " + item);
 //////////////////////////////////////////////////////////////////////
 // 2. Create a function that removes the last item from the list.
 // Return the removed item.
-
-// Code to modularize:
-let itemToRemove = groceryList[groceryList.length - 1];
-groceryList.pop();
-console.log("Item removed: " + itemToRemove);
+function removeLast(){
+  return "Item removed:"+
+  groceryList.pop();
+}
 
 //////////////////////////////////////////////////////////////////////
 // 3. Create a function that updates a specific item in the list.
@@ -43,7 +47,12 @@ console.log("Item updated from " + oldItem + " to " + newItem);
 //////////////////////////////////////////////////////////////////////
 // 4. Create a function that shows the current grocery list.
 // Returns the grocery list array.
-
+function showList(){
+  if(groceryList.length === 0){
+  }else{
+    return "The grocery list id empty";
+  };
+};
 // Code to modularize:
 if (groceryList.length === 0) {
   console.log("The grocery list is empty.");
@@ -60,12 +69,16 @@ if (groceryList.length === 0) {
 // 1. Write a function that logs how many items you have left in the list.
 // It should log the following "The grocery list has x item(s).", with x being how many items are left.
 // Returns the grocery list length.
-
+function showCount(){
+  return groceryList.length;
+};
 //////////////////////////////////////////////////////////////////////
 // 2. Write a function that clears the whole grocery list.
 // It should log the following "The grocery list is now empty."
 // Returns the empty grocery list.
-
+function clearList(){
+  groceryList = [];
+};
 //////////////////////////////////////////////////////////////////////
 // Part 3 - Calling Functions
 // You want to create a charcuterie board so now it's time to call the functions you wrote in Part 1 and Part 2.
@@ -90,29 +103,30 @@ if (groceryList.length === 0) {
 */
 
 // Call 1: Clear the grocery list
-
+clearList();
 // Call 2: Add Gouda Cheese
-
+additem("Gouda Cheese");
 // Call 3: Add Brie Cheese
-
+additem("Brie Cheese");
 // Call 4: Add Swiss Cheese
-
+additem("Swiss Cheese");
 // Call 5: Remove Swiss Cheese
-
+removeLast();
 // Call 6: Add Green Grapes
-
+additem("Green Grapes");
 // Call 7: Show the list
-
+showList();
 // Call 8: Add Prosciutto
-
+additem("Prosciutto");
 // Call 9: Add Chorizo
-
+additem("Chorizo");
 // Call 10: Add Multigrain Crackers
-
+additem("Multigrain Crackers");
 // Call 11: Update Chorizo to Jamon
-
+updateitem(5,"Jamon");
 // Call 12: Show the count of items
-
+showCount;
 // Call 13: Add Pita Chips
-
+additem("Pita Chips");
 // Call 14: Show the final list
+showList();
